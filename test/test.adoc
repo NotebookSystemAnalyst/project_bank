@@ -21,4 +21,35 @@
 | Bearer sadfdsafzxcvq21321dsa
 | -
 
+|testString
+|Какой-то атрибут типа string
+|Body
+|String
+|True
+|Some string
+|-
+
+|testBoolean
+|Какой-то атрбут типа boolean
+|Body
+|False
+|true
+|-
+
+|testArray
+|Какой-то атрибут типа array
+|Body
+|Array
+|False
+|[]
+|-
+
+|testObject
+|Какой-то атрибут типа object
+|Body
+|Object
+|False
+|{}
+|-
+
 |===
