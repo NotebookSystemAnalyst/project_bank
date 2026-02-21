@@ -91,7 +91,7 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 --header 'Authorization: Bearer sadfdsafzxcvq21321dsa' \
 --data-raw '
 {
-    "testString": "some test",
+    "testString": "some_test_string",
     "testBoolean": true,
     "testNumber": 1234,
     "testArray": [],
