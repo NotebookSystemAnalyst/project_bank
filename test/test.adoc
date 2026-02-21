@@ -1,6 +1,7 @@
 = Содержание документа
 = API: Создание ресурса test
 :toc:
+:toc-title:
 :toclevels: 3
 :sectnums:
 :icons: font
