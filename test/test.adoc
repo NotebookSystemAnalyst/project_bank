@@ -108,5 +108,8 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 }
 ----
 
+== Описание базы данных
+xref:test.database.adoc[База данных]
+
 == Диаграмма последовательности
 xref:test.aequence.mermaid [Диаграмма]

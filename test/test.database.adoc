@@ -1,0 +1,26 @@
+[source, dbml]
+----
+Table users {
+  id uuid [pk]
+  username varchar(100) [not null, unique]
+  email varchar(255) [not null, unique]
+  created_at timestamp [not null]
+}
+
+Table test {
+  id uuid [pk]
+  name varchar(255) [not null]
+  type varchar(100) [not null]
+  status varchar(50) [not null, default: 'CREATED']
+  created_by uuid [not null]
+  created_at timestamp [not null]
+  updated_at timestamp
+
+  Indexes {
+    (name)
+    (type)
+  }
+}
+
+Ref: test.created_by > users.id
+----
