@@ -78,6 +78,7 @@
 |===
 
 == 5. Пример запроса
+
 ---
 [source,bash]
 curl --location --request POST /ru-external-api/client-fast-check' \
