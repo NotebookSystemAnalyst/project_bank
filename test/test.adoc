@@ -112,4 +112,4 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 xref:test.database.adoc[База данных]
 
 == Диаграмма последовательности
-xref:test.aequence.mermaid [Диаграмма]
+xref:test.sequence.mermaid [Диаграмма]
