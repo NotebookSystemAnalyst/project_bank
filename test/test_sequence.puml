@@ -1,26 +1,27 @@
-@startuml
+sequenceDiagram
+    actor Client
+    participant API
+    participant AuthService
+    participant Service
+    participant DB
 
-actor "Пользователь" as User
-participant "Фронтенд" as Client
-participant "Бэкенд" as Server
-database "База данных" as DB
+    Client->>API: POST /test (Authorization, Body)
+    API->>AuthService: Validate token
 
-autonumber
+    alt Токен невалиден
+        AuthService-->>API: Invalid
+        API-->>Client: 403 Forbidden
+    else Токен валиден
+        AuthService-->>API: Valid
+        API->>Service: Validate required fields
 
-User -> Client: Отправляет запрос (нажимает кнопку)
-activate Client
-
-Client -> Server: POST /api/data
-activate Server
-
-Server -> DB: Сохранить данные
-activate DB
-DB --> Server: OK
-deactivate DB
-
-Server --> Client: Ответ 201 Created
-deactivate Server
-
-Client --> User: Показать сообщение об успехе
-deactivate Client
-@enduml
+        alt Отсутствуют обязательные поля
+            Service-->>API: Validation error
+            API-->>Client: 400 Bad Request
+        else Данные корректны
+            Service->>DB: Create resource
+            DB-->>Service: OK
+            Service-->>API: 201 Created
+            API-->>Client: 201 Created
+        end
+    end
