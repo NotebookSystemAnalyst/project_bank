@@ -19,5 +19,6 @@
 | String
 | True
 | Bearer sadfdsafzxcvq21321dsa
+| -
 
 |===
