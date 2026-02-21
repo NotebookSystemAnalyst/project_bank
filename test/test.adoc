@@ -1,11 +1,8 @@
 = Содержание документа
-= API: Создание ресурса test
 :toc:
 :toc-title:
 :toclevels: 3
 :sectnums:
-:icons: font
-:source-highlighter: highlightjs
 
 == Назначение метода
 Метод предназначен для создания ресурса test.
