@@ -78,7 +78,8 @@
 |===
 
 == 5. Пример запроса
-`
+---
+[source,bash]
 curl --location --request POST /ru-external-api/client-fast-check' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer sadfdsafzxcvq21321dsa' \
@@ -90,4 +91,4 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 "testArray": [],
 "testObject": {}
 }
-`
+---
