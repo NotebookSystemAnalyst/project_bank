@@ -103,4 +103,4 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 ----
 
 == 7. Диаграмма последовательности
-xref:test/test.aequence.mermaid [Диаграмма]
+xref:test.aequence.mermaid [Диаграмма]
