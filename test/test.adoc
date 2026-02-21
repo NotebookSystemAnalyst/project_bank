@@ -32,6 +32,7 @@
 |testBoolean
 |Какой-то атрбут типа boolean
 |Body
+|Boolean
 |False
 |true
 |-
