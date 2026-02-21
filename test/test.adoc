@@ -92,3 +92,12 @@ curl --location --request POST /ru-external-api/client-fast-check' \
     "testObject": {}
 }
 ----
+
+== 6. Пример овтета
+[source, json]
+----
+201
+{
+    "status": "Created"
+}
+----
