@@ -1,0 +1,26 @@
+@startuml
+
+actor "Пользователь" as User
+participant "Фронтенд" as Client
+participant "Бэкенд" as Server
+database "База данных" as DB
+
+autonumber
+
+User -> Client: Отправляет запрос (нажимает кнопку)
+activate Client
+
+Client -> Server: POST /api/data
+activate Server
+
+Server -> DB: Сохранить данные
+activate DB
+DB --> Server: OK
+deactivate DB
+
+Server --> Client: Ответ 201 Created
+deactivate Server
+
+Client --> User: Показать сообщение об успехе
+deactivate Client
+@enduml

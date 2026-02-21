@@ -93,7 +93,7 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 }
 ----
 
-== 6. Пример овтета
+== 6. Пример ответа
 [source, json]
 ----
 201
@@ -101,3 +101,5 @@ curl --location --request POST /ru-external-api/client-fast-check' \
     "status": "Created"
 }
 ----
+
+== 7. Диаграмма последовательности
