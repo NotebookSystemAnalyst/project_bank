@@ -4,6 +4,6 @@
 == 2. Входные параметры
 |===
 | *Параметр* | *Описание* | *Способ передачи* | *Тип данных* | *Обязательность* | *Пример* | *Комментарий*
-| Content-Type | Тип контента | Header | String | True | application/json | Передается в заголовках запроса
-| Authorization | Токен аутентификации | Header | String | True | Beare =sadfdsafzxcvq21321dsa
+| Content-Type | Тип контента | Header | String | True | application/json | Передается в заголовках запроса |
+| Authorization | Токен аутентификации | Header | String | True | Beare =sadfdsafzxcvq21321dsa |
 |===
