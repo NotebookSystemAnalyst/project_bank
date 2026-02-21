@@ -1,0 +1,115 @@
+= Содержание страницы
+:toc:
+:toc-title: 
+:toclevels: 3
+:sectnums:
+
+== Назначение метода
+Метод предназначен для создания ресурса test.
+
+== Входные параметры
+|===
+| *Параметр* | *Описание* | *Способ передачи* | *Тип данных* | *Обязательность* | *Пример* | *Комментарий*
+
+| Content-Type
+| Тип контента
+| Header
+| String
+| True
+| application/json
+| Передается в заголовках запроса
+
+| Authorization
+| Токен аутентификации
+| Header
+| String
+| True
+| Bearer sadfdsafzxcvq21321dsa
+| -
+
+|testString
+|Какой-то атрибут типа string
+|Body
+|String
+|True
+|Some string
+|-
+
+|testBoolean
+|Какой-то атрбут типа boolean
+|Body
+|Boolean
+|False
+|true
+|-
+
+|testArray
+|Какой-то атрибут типа array
+|Body
+|Array
+|False
+|[]
+|-
+
+|testObject
+|Какой-то атрибут типа object
+|Body
+|Object
+|False
+|{}
+|-
+
+|===
+
+== Алгоритм работы метода 
+. Метод получает на вход токен аутентификации.
+. Проверяет его валидность.
+** 2.1 Если токен не валиден, возвращает ответ 403.
+** 2.2 Если токен валиден, то происходит проверка на наличие обязательных атрибутов.
+. Если хотя бы один обязательный атрибут не найден, возвращается ответ 400.
+. Если все обязательные атрибуты указаны, то происходит создание нового ресурса с параметрами, переданными в теле запроса.
+
+== Возможные ошибки
+|===
+| *Код ошибки* | *Текст ошибки* | *Причина*
+
+|400
+|bad request
+|Не переданы обязательные атрибуты запроса
+
+|403
+|unauthorized
+|Пользователь не авторизован или у токена истек срок действия
+
+|===
+
+== Пример запроса
+[source,bash]
+----
+curl --location --request POST /ru-external-api/client-fast-check' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer sadfdsafzxcvq21321dsa' \
+--data-raw '
+{
+    "testString": "some_test_string_!",
+    "testBoolean": true,
+    "testNumber": 1234,
+    "testArray": [],
+    "testObject": {}
+}
+----
+
+== Пример ответа
+[source, json]
+----
+201
+{
+    "status": "Created"
+}
+----
+
+== Описание базы данных
+xref:test.database.adoc[База данных]
+
+== Диаграмма последовательности
+xref:test.sequence.mermaid [Диаграмма]
