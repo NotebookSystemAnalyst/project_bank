@@ -103,3 +103,4 @@ curl --location --request POST /ru-external-api/client-fast-check' \
 ----
 
 == 7. Диаграмма последовательности
+<<test/test.aequence.mermaid#, UML sequence diagram>>
